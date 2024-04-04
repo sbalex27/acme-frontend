@@ -23,7 +23,7 @@
 export default {
   data() {
     return {
-      url: "https://localhost:7277/api/FormFilling/conocimientos-desarrollo-software",
+      url: "",
     };
   },
   watch: {

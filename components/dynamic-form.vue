@@ -28,7 +28,7 @@
     </div>
 
     <!-- Debug Info -->
-    <pre class="font-mono text-xs text-gray-500">{{ resultFields }}</pre>
+    <!-- <pre class="font-mono text-xs text-gray-500">{{ resultFields }}</pre> -->
   </div>
 </template>
 
