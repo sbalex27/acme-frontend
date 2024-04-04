@@ -1,12 +1,12 @@
 <template>
   <div v-show="form === null">
     <div class="flex justify-center items-center h-screen">
-      <url-dialog @fetched="onFetched"></url-dialog>
+      <url-dialog @fetched="onFetched" @urlChanged="onUrl"></url-dialog>
     </div>
   </div>
   <div v-if="form !== null">
     <div class="container mx-auto">
-      <dynamic-form :form="form"></dynamic-form>
+      <dynamic-form :form="form" :sendFormUrl="url"></dynamic-form>
     </div>
   </div>
 </template>
@@ -23,11 +23,15 @@ export default {
   data() {
     return {
       form: null,
+      url: null,
     };
   },
   methods: {
-    async onFetched(form) {
+    onFetched(form) {
       this.form = form;
+    },
+    onUrl(url) {
+      this.url = url;
     },
   },
 };

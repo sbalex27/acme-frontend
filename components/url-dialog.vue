@@ -1,5 +1,5 @@
 <template>
-  <UCard class="w-1/3">
+  <UCard class="w-1/2">
     <template #header>
       <!-- <Placeholder class="h-8" /> -->
       <h1 class="text-2xl font-bold">Cuestionario</h1>
@@ -26,6 +26,11 @@ export default {
       url: "https://localhost:7277/api/FormFilling/conocimientos-desarrollo-software",
     };
   },
+  watch: {
+    url() {
+      this.$emit("urlChanged", this.url);
+    },
+  },
   methods: {
     async submit() {
       const response = await $fetch(this.url, {
@@ -34,6 +39,7 @@ export default {
 
       // Emit the response to the form page
       this.$emit("fetched", response);
+      this.$emit("urlChanged", this.url);
     },
   }
 };

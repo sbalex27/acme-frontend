@@ -2,35 +2,35 @@
   <div>
     <div v-if="isText">
       <UInput
-        v-model="textValue"
-        :placeholder="field.title"
+        v-model="modelValue.value"
+        :placeholder="modelValue.title"
         class="w-full"
       ></UInput>
     </div>
     <div v-else-if="isNumber">
       <UInput
-        v-model="numberValue"
-        :placeholder="field.title"
+        v-model="modelValue.value"
+        :placeholder="modelValue.title"
         class="w-full"
         type="number"
       ></UInput>
     </div>
     <div v-else-if="isDate">
       <UInput
-        v-model="dateValue"
-        :placeholder="field.title"
+        v-model="modelValue.value"
+        :placeholder="modelValue.title"
         class="w-full"
         type="date"
       ></UInput>
     </div>
     <div v-else-if="isBoolean">
       <UCheckbox
-        v-model="booleanValue"
-        :label="field.title"
+        v-model="modelValue.value"
+        :label="modelValue.title"
       ></UCheckbox>
     </div>
     <div v-else>
-      <p>Field type {{ field.type }} not supported</p>
+      <p>Field type {{ modelValue.type }} not supported</p>
     </div>
   </div>
 </template>
@@ -38,11 +38,12 @@
 <script>
 export default {
   props: {
-    field: {
+    modelValue: {
       type: Object,
       required: true,
     },
   },
+  emit: ["update:modelValue"],
   data() {
     return {
       textValue: null,
@@ -53,16 +54,16 @@ export default {
   },
   computed: {
     isText() {
-      return this.field.type === "Text";
+      return this.modelValue.type === "Text";
     },
     isNumber() {
-      return this.field.type === "Number";
+      return this.modelValue.type === "Number";
     },
     isDate() {
-      return this.field.type === "Date";
+      return this.modelValue.type === "Date";
     },
     isBoolean() {
-      return this.field.type === "Boolean";
+      return this.modelValue.type === "Boolean";
     },
   },
 };
