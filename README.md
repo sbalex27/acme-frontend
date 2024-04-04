@@ -1,6 +1,13 @@
-# Nuxt 3 Minimal Starter
+# Acme Forms Frontend
+El siguiente proyecto funciona como frontend únicamente para el llenado de formularios por medio de links
+1. Ingrese el URL generado por el Servicio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![image](https://github.com/sbalex27/acme-frontend/assets/48226829/802c224e-96b6-4fd9-b5ef-1ea46574e794)
+
+2. Llene la información
+
+![image](https://github.com/sbalex27/acme-frontend/assets/48226829/67390b27-1510-4cb5-a931-4a39afa153b7)
+
 
 ## Setup
 
